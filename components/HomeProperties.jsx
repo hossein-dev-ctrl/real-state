@@ -9,12 +9,12 @@ const HomeProperties = () => {
       <h2 className="text-3xl font-bold text-blue-500 mt-6 text-center">
         املاک اخیر
       </h2>
-      <section class="px-4 py-6">
-        <div class="container-xl lg:container m-auto px-4 py-6">
+      <section className="px-4 py-6">
+        <div className="container-xl lg:container m-auto px-4 py-6">
           {recentProperties.length === 0 ? (
             <div>ملکی برای مشاهده وجود ندارد</div>
           ) : (
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {recentProperties.map((property) => {
                 // return <div>{property.name}</d
                 return <Property key={property._id} property={property} />;
