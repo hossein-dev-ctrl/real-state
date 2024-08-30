@@ -4,11 +4,11 @@ const UserSchema = new Schema({
     email: {
         type: String,
         unique: [true, "ایمیل از قبل وجود دارد"],
-        required: [true, "نام کاربری از قبل وجود دارد"]
+        required: [true, "وارد کردن ایمیل اجباری است"]
     },
     username: {
         type: String,
-        required: [true, "نام کاربری از قبل وجود دارد"]
+        required: [true, "وارد کردن نام کاربری اجباری است"]
     },
     image: {
         type: String
