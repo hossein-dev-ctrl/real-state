@@ -6,7 +6,7 @@ import {
   FaMoneyBill,
   FaMapMarker,
 } from "react-icons/fa";
-const Property = ({ property }) => {
+const PropertyCard = ({ property }) => {
   const getRateDisplay = () => {
     const { rates } = property;
     if (rates.monthly) {
@@ -90,4 +90,4 @@ const Property = ({ property }) => {
   );
 };
 
-export default Property;
+export default PropertyCard;
