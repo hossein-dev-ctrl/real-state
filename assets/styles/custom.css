@@ -1,11 +1,12 @@
-#user-menu{
-    direction: rtl;
-}
-#hero{
-    direction: rtl;
 
-}
-
+@font-face {
+    font-family: 'shabnam';
+    src:  url('../fonts/Shabnam-Light-FD-WOL.ttf'),
+    url('../fonts/Shabnam-light-FD-WOL.woff'),
+    url('../fonts/Shabnam-light-FD-WOL.eot'),
+    url('../fonts/Shabnam-light-FD-WOL.woff2');
+  
+  }
 *{
-    direction: rtl;
+    font-family: 'shabnam','Courier New', Courier, monospace;
 }
