@@ -7,8 +7,13 @@ module.exports = {
   ],
   theme: {
     extend: {
-
+      gridTemplateColumns:{
+        "70/30":'70% 228%'
+      }
     },
+    fontFamily:{
+      sans :['shabnam','sans-serif']
+    }
   },
   plugins: [],
 };
