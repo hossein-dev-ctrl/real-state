@@ -3,15 +3,26 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FaGoogle } from "react-icons/fa";
 import DefaultProfile from "@/assets/images/profile.png";
 import LogoWhite from "@/assets/images/logo-white.png";
+import { signIn, signOut, useSession, getProviders } from "next-auth/react";
 
 const Navbar = () => {
+  const { data: session } = useSession();
   const [isMobileMenuState, setIsMobileMenuState] = useState(false);
   const [isProfileMenuState, setIsProfileMenuState] = useState(false);
-  const [isLoggedInState, setIsLoggedInState] = useState(false);
+  const [providers, setProviders] = useState(null);
+
+  useEffect(() => {
+    const setAuthProviders = async () => {
+      const res = await getProviders();
+      setProviders(res);
+    };
+
+    setAuthProviders();
+  }, []);
 
   const pathname = usePathname();
 
@@ -84,7 +95,7 @@ const Navbar = () => {
                 >
                   املاک
                 </Link>
-                {isLoggedInState && (
+                {session && (
                   <Link
                     href="/properties/add-property"
                     className={`${
@@ -100,20 +111,29 @@ const Navbar = () => {
           </div>
 
           {/* <!-- right Side Menu (Logged Out) --> */}
-          {!isLoggedInState && (
+          {!session && (
             <div className="hidden md:block md:ml-6">
               <div className="flex items-center">
-                <button className="flex items-center text-white bg-gray-700 hover:bg-gray-900 hover:text-white rounded-md px-3 py-2">
-                  {/* <i className="fa-brands fa-google text-white ml-2"></i> */}
-                  <FaGoogle className="text-white mr-2" />
-                  <span>ورود یا ثبت نام</span>
-                </button>
+                {providers &&
+                  Object.values(providers).map((provider, index) => {
+                    return (
+                      <button
+                        key={index}
+                        onClick={() => signIn(provider.id)}
+                        className="flex items-center text-white bg-gray-700 hover:bg-gray-900 hover:text-white rounded-md px-3 py-2"
+                      >
+                        {/* <i className="fa-brands fa-google text-white ml-2"></i> */}
+                        <FaGoogle className="text-white mr-2" />
+                        <span>ورود یا ثبت نام</span>
+                      </button>
+                    );
+                  })}
               </div>
             </div>
           )}
 
           {/* <!-- right Side Menu (Logged In) --> */}
-          {isLoggedInState && (
+          {session && (
             <div className="absolute inset-y-0 left-0 flex items-center pl-2 md:static md:inset-auto md:ml-6 md:pl-0">
               <Link href="messages" className="relative group ml-2">
                 <button
@@ -225,7 +245,7 @@ const Navbar = () => {
             >
               املاک
             </Link>
-            {isLoggedInState && (
+            {session && (
               <Link
                 href="/properties/add-property"
                 className="text-white block rounded-md px-3 py-2 text-base font-medium"
@@ -233,7 +253,7 @@ const Navbar = () => {
                 اضافه کردن ملک
               </Link>
             )}
-            {!isLoggedInState && (
+            {!session && (
               <button className="flex items-center text-white bg-gray-700 hover:bg-gray-900 hover:text-white rounded-md px-3 py-2 my-5">
                 <i className="fa-brands fa-google mr-2"></i>
                 <span>ورود یا ثبت نام</span>

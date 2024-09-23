@@ -1,4 +1,5 @@
 import "@/assets/styles/globals.css";
+import AuthProviders from "@/components/AuthProviders";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 export const metadata = {
@@ -8,13 +9,15 @@ export const metadata = {
 };
 const layout = ({ children }) => {
   return (
-    <html dir="rtl">
-      <body className="text-gray-500">
-        <Navbar />
-        {children}
-        <Footer />
-      </body>
-    </html>
+    <AuthProviders>
+      <html dir="rtl">
+        <body className="text-gray-500">
+          <Navbar />
+          {children}
+          <Footer />
+        </body>
+      </html>
+    </AuthProviders>
   );
 };
 
