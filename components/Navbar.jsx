@@ -11,6 +11,9 @@ import { signIn, signOut, useSession, getProviders } from "next-auth/react";
 
 const Navbar = () => {
   const { data: session } = useSession();
+
+  const profileImage = session?.user?.image;
+
   const [isMobileMenuState, setIsMobileMenuState] = useState(false);
   const [isProfileMenuState, setIsProfileMenuState] = useState(false);
   const [providers, setProviders] = useState(null);
@@ -176,10 +179,10 @@ const Navbar = () => {
                     <span className="absolute -inset-1.5"></span>
                     <span className="sr-only">باز کردن منوی کاربری</span>
                     <Image
-                      width={0}
-                      height={0}
+                      width={40}
+                      height={40}
                       className="h-8 w-8 rounded-full"
-                      src={DefaultProfile}
+                      src={profileImage || DefaultProfile}
                       alt=""
                     />
                   </button>
