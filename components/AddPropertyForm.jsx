@@ -27,7 +27,7 @@ const AddPropertyForm = () => {
         </select>
       </div>
       <div className="mb-4">
-        <label className="block text-gray-700 font-bold mb-2">نام فهرست</label>
+        <label className="block text-gray-700 font-bold mb-2">عنوان</label>
         <input
           type="text"
           id="name"
