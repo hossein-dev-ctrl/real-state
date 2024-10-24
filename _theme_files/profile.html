@@ -18,7 +18,7 @@
     <nav class="bg-blue-700 border-b border-blue-500">
       <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
         <div class="relative flex h-20 items-center justify-between">
-          <div class="absolute inset-y-0 left-0 flex items-center md:hidden">
+          <div class="absolute inset-y-0 right-0 flex items-center md:hidden">
             <!-- Mobile menu button-->
             <button
               type="button"
@@ -28,7 +28,7 @@
               aria-expanded="false"
             >
               <span class="absolute -inset-0.5"></span>
-              <span class="sr-only">Open main menu</span>
+              <span class="sr-only">باز کردن منوی اصلی</span>
               <svg
                 class="block h-6 w-6"
                 fill="none"
@@ -52,13 +52,13 @@
             <!-- Logo -->
             <a class="flex flex-shrink-0 items-center" href="/index.html">
               <img
-                class="h-10 w-auto"
-                src="/images/logo-white.png"
+                class="h-10 w-auto ml-2"
+                src="./images/logo-white.png"
                 alt="PropertyPulse"
               />
 
               <span class="hidden md:block text-white text-2xl font-bold ml-2"
-                >PropertyPulse</span
+                >املاک</span
               >
             </a>
             <!-- Desktop Menu Hidden below md screens -->
@@ -67,45 +67,45 @@
                 <a
                   href="/index.html"
                   class="text-white bg-black hover:bg-gray-900 hover:text-white rounded-md px-3 py-2"
-                  >Home</a
+                  >خانه</a
                 >
                 <a
                   href="/properties.html"
                   class="text-white hover:bg-gray-900 hover:text-white rounded-md px-3 py-2"
-                  >Properties</a
+                  >املاک</a
                 >
                 <a
                   href="/add-property.html"
                   class="text-white hover:bg-gray-900 hover:text-white rounded-md px-3 py-2"
-                  >Add Property</a
+                  >اضافه کردن ملک</a
                 >
               </div>
             </div>
           </div>
 
-          <!-- Right Side Menu (Logged Out) -->
+          <!-- left Side Menu (Logged Out) -->
           <div class="hidden md:block md:ml-6">
             <div class="flex items-center">
               <button
                 class="flex items-center text-white bg-gray-700 hover:bg-gray-900 hover:text-white rounded-md px-3 py-2"
               >
-                <i class="fa-brands fa-google text-white mr-2"></i>
-                <span>Login or Register</span>
+                <i class="fa-brands fa-google text-white ml-2"></i>
+                <span>ورود یا ثبت نام</span>
               </button>
             </div>
           </div>
 
-          <!-- Right Side Menu (Logged In) -->
+          <!-- left Side Menu (Logged In) -->
           <div
-            class="absolute inset-y-0 right-0 flex items-center pr-2 md:static md:inset-auto md:ml-6 md:pr-0"
+            class="absolute inset-y-0 left-0 flex items-center pl-2 md:static md:inset-auto md:ml-6 md:pl-0"
           >
-            <a href="messages.html" class="relative group">
+            <a href="messages.html" class="relative group ml-2">
               <button
                 type="button"
                 class="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
               >
                 <span class="absolute -inset-1.5"></span>
-                <span class="sr-only">View notifications</span>
+                <span class="sr-only">مشاهده اعلانات</span>
                 <svg
                   class="h-6 w-6"
                   fill="none"
@@ -122,7 +122,7 @@
                 </svg>
               </button>
               <span
-                class="absolute top-0 right-0 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-white transform translate-x-1/2 -translate-y-1/2 bg-red-600 rounded-full"
+                class="absolute top-0 left-0 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-white transform translate-x-1/2 -translate-y-1/2 bg-red-600 rounded-full"
               >
                 2
                 <!-- Replace with the actual number of notifications -->
@@ -139,10 +139,10 @@
                   aria-haspopup="true"
                 >
                   <span class="absolute -inset-1.5"></span>
-                  <span class="sr-only">Open user menu</span>
+                  <span class="sr-only">باز کردن منوی کاربری</span>
                   <img
                     class="h-8 w-8 rounded-full"
-                    src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                    src="./images/profile.png"
                     alt=""
                   />
                 </button>
@@ -151,7 +151,7 @@
               <!-- Profile dropdown -->
               <div
                 id="user-menu"
-                class="hidden absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+                class="hidden absolute left-0 z-10 mt-2 w-48 origin-top-left rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
                 role="menu"
                 aria-orientation="vertical"
                 aria-labelledby="user-menu-button"
@@ -163,15 +163,15 @@
                   role="menuitem"
                   tabindex="-1"
                   id="user-menu-item-0"
-                  >Your Profile</a
+                  >پروفایل شما</a
                 >
                 <a
-                  href="saved-properties.html"
+                  href="/saved-properties.html"
                   class="block px-4 py-2 text-sm text-gray-700"
                   role="menuitem"
                   tabindex="-1"
                   id="user-menu-item-2"
-                  >Saved Properties</a
+                  >ملک های ذخیره شده</a
                 >
                 <button
                   class="block px-4 py-2 text-sm text-gray-700"
@@ -179,7 +179,7 @@
                   tabindex="-1"
                   id="user-menu-item-2"
                 >
-                  Sign Out
+                  خروج
                 </button>
               </div>
             </div>
@@ -193,78 +193,79 @@
           <a
             href="/index.html"
             class="bg-black text-white block rounded-md px-3 py-2 text-base font-medium"
-            >Home</a
+            >خانه</a
           >
           <a
             href="/properties.html"
             class="text-white block rounded-md px-3 py-2 text-base font-medium"
-            >Properties</a
+            >املاک</a
           >
           <a
             href="/add-property.html"
             class="text-white block rounded-md px-3 py-2 text-base font-medium"
-            >Add Property</a
+            >اضافه کردن ملک</a
           >
           <button
             class="flex items-center text-white bg-gray-700 hover:bg-gray-900 hover:text-white rounded-md px-3 py-2 my-5"
           >
             <i class="fa-brands fa-google mr-2"></i>
-            <span>Login or Register</span>
+            <span>ورود یا ثبت نام</span>
           </button>
         </div>
       </div>
     </nav>
-
     <section class="bg-blue-50">
       <div class="container m-auto py-24">
         <div
           class="bg-white px-6 py-8 mb-4 shadow-md rounded-md border m-4 md:m-0"
         >
-          <h1 class="text-3xl font-bold mb-4">Your Profile</h1>
+          <h1 class="text-3xl font-bold mb-4">پروفایل شما</h1>
           <div class="flex flex-col md:flex-row">
             <div class="md:w-1/4 mx-20 mt-10">
               <div class="mb-4">
                 <img
                   class="h-32 w-32 md:h-48 md:w-48 rounded-full mx-auto md:mx-0"
-                  src="/images/profile.png"
+                  src="./images/profile.png"
                   alt="User"
                 />
               </div>
 
               <h2 class="text-2xl mb-4">
-                <span class="font-bold block">Name: </span> John Doe
+                <span class="font-bold block">نام : </span> صمد
               </h2>
               <h2 class="text-2xl">
-                <span class="font-bold block">Email: </span> john@gmail.com
+                <span class="font-bold block">ایمیل : </span> samad@gmail.com
               </h2>
             </div>
 
             <div class="md:w-3/4 md:pl-4">
-              <h2 class="text-xl font-semibold mb-4">Your Listings</h2>
+              <h2 class="text-xl font-semibold mb-4">لیست املاک شما</h2>
               <div class="mb-10">
                 <a href="/property.html">
                   <img
                     class="h-32 w-full rounded-md object-cover"
-                    src="/images/properties/a1.jpg"
+                    src="./images/properties/a1.jpg"
                     alt="Property 1"
                   />
                 </a>
                 <div class="mt-2">
-                  <p class="text-lg font-semibold">Property Title 1</p>
-                  <p class="text-gray-600">Address: 123 Main St</p>
+                  <p class="text-lg font-semibold">ملک قیطریه</p>
+                  <p class="text-gray-600">
+                    آدرس : خیابان شریعتی نبش گلها پلاک 3
+                  </p>
                 </div>
                 <div class="mt-2">
                   <a
                     href="/add-property.html"
-                    class="bg-blue-500 text-white px-3 py-3 rounded-md mr-2 hover:bg-blue-600"
+                    class="bg-blue-500 text-white px-2 py-2 rounded-md ml-2 hover:bg-blue-600"
                   >
-                    Edit
+                    ویرایش
                   </a>
                   <button
                     class="bg-red-500 text-white px-3 py-2 rounded-md hover:bg-red-600"
                     type="button"
                   >
-                    Delete
+                    حذف
                   </button>
                 </div>
               </div>
@@ -272,26 +273,28 @@
                 <a href="/property.html">
                   <img
                     class="h-32 w-full rounded-md object-cover"
-                    src="/images/properties/b1.jpg"
+                    src="./images/properties/b1.jpg"
                     alt="Property 2"
                   />
                 </a>
                 <div class="mt-2">
-                  <p class="text-lg font-semibold">Property Title 2</p>
-                  <p class="text-gray-600">Address: 456 Elm St</p>
+                  <p class="text-lg font-semibold">ملک سعادت آباد</p>
+                  <p class="text-gray-600">
+                    آدرس میدان صنعت نبش اقاقیها پلاک 83
+                  </p>
                 </div>
                 <div class="mt-2">
                   <a
                     href="/add-property.html"
-                    class="bg-blue-500 text-white px-3 py-3 rounded-md mr-2 hover:bg-blue-600"
+                    class="bg-blue-500 text-white px-2 py-2 rounded-md ml-2 hover:bg-blue-600"
                   >
-                    Edit
+                    ویرایش
                   </a>
                   <button
                     class="bg-red-500 text-white px-3 py-2 rounded-md hover:bg-red-600"
                     type="button"
                   >
-                    Delete
+                    حذف
                   </button>
                 </div>
               </div>
@@ -307,19 +310,19 @@
         class="container mx-auto flex flex-col md:flex-row items-center justify-between px-4"
       >
         <div class="mb-4 md:mb-0">
-          <img src="/images/logo.png" alt="Logo" class="h-8 w-auto" />
+          <img src="./images/logo.png" alt="Logo" class="h-8 w-auto" />
         </div>
         <div
           class="flex flex-wrap justify-center md:justify-start mb-4 md:mb-0"
         >
-          <ul class="flex space-x-4">
-            <li><a href="/properties.html">Properties</a></li>
-            <li><a href="/terms.html">Terms of Service</a></li>
+          <ul class="flex space-x-4 gap-6">
+            <li><a href="/properties.html">املاک</a></li>
+            <li><a href="/terms.html">شرایط و خدمات</a></li>
           </ul>
         </div>
         <div>
           <p class="text-sm text-gray-500 mt-2 md:mt-0">
-            &copy; 2024 PropertyPulse. All rights reserved.
+            &copy; تمامی حقوق محفوظ است. املاک آسمان 2024.
           </p>
         </div>
       </div>
