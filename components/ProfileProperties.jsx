@@ -1,6 +1,24 @@
+"use client";
 import Image from "next/image";
-const ProfileProperties = ({ properties }) =>
-  properties.map((property, index) => (
+import DeleteProperty from "@/app/actions/deleteProperty";
+import { useState } from "react";
+
+const ProfileProperties = ({ properties }) => {
+  const [newProperties, setNewProperties] = useState(properties);
+
+  const handleDeleteProperty = async (propertyId) => {
+    const confirm = window.confirm("آیا از حذف ملک مطمئن هستید؟");
+
+    if (!confirm) return;
+
+    await DeleteProperty(propertyId);
+    const updateproperties = properties.filter((property) => {
+      property._id !== propertyId;
+    });
+    setNewProperties(updateproperties);
+  };
+
+  return newProperties.map((property, index) => (
     <div class="mb-10">
       <a href="/property.html">
         <Image
@@ -26,11 +44,13 @@ const ProfileProperties = ({ properties }) =>
         <button
           class="bg-red-500 text-white px-3 py-2 rounded-md hover:bg-red-600"
           type="button"
+          onClick={() => handleDeleteProperty(property._id)}
         >
           حذف
         </button>
       </div>
     </div>
   ));
+};
 
 export default ProfileProperties;
