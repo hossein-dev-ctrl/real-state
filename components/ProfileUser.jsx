@@ -4,6 +4,7 @@ import Property from "@/models/Property";
 import { getSessionUser } from "@/utils/getSessionUser";
 import defultImage from "@/assets/images/profile.png";
 import ProfileProperties from "./ProfileProperties";
+import { convertToSerializableToObject } from "@/utils/convertToObject";
 
 const ProfileUser = async () => {
   const sessionUser = await getSessionUser();
@@ -17,6 +18,7 @@ const ProfileUser = async () => {
   const imgProfile = sessionUser.user.image || defultImage;
 
   const propertiesProfile = await Property.find({ owner: userId }).lean();
+  const properties = propertiesProfile.map(convertToSerializableToObject);
   // console.log(propertiesProfile);
   return (
     <div class="bg-white px-6 py-8 mb-4 shadow-md rounded-md border m-4 md:m-0">
@@ -44,7 +46,7 @@ const ProfileUser = async () => {
 
         <div class="md:w-3/4 md:pl-4">
           <h2 class="text-xl font-semibold mb-4">لیست املاک شما</h2>
-          <ProfileProperties properties={propertiesProfile} />
+          <ProfileProperties properties={properties} />
         </div>
       </div>
     </div>
